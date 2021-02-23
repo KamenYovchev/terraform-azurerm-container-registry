@@ -1,8 +1,8 @@
 resource "azurerm_container_registry" "acr" {
-  name                     = "containerRegistry1"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
-  sku                      = "Premium"
-  admin_enabled            = false
-  georeplication_locations = ["East US", "West Europe"]
+  name                     = var.name
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
+  sku                      = var.sku
+  admin_enabled            = var.admin_enabled
+  georeplication_locations = var.georeplication_locations
 }
